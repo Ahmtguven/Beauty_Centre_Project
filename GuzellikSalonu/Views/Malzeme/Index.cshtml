@@ -1,0 +1,53 @@
+﻿@model IEnumerable<GuzellikSalonu.Models.MalzemeModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+<p>
+    @Html.ActionLink("Ekle", "EY",null, new { @class = "btn btn-success" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MalzemeAdı)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MalzemeTutarı)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fayda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Acıklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HizmetNo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MalzemeAdı)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MalzemeTutarı)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fayda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Acıklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HizmetNo)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "EY", new {id=item.MalzemeNo}, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Sil", "Sil", new { id=item.MalzemeNo}, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

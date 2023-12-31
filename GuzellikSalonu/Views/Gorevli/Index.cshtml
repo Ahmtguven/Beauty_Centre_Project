@@ -1,0 +1,65 @@
+﻿@model IEnumerable<GuzellikSalonu.Models.GorevliModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+<p>
+    @Html.ActionLink("Ekle", "EY", null, new { @class = "btn btn-success" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AdSoyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Yas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MesaiDurumu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Maas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalonNo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdSoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Yas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MesaiDurumu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Maas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalonNo)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "EY", new { id = item.GorevliNo }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Sil", "Sil", new { id = item.GorevliNo }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

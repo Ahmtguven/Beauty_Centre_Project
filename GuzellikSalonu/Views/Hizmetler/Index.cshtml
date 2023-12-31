@@ -1,0 +1,59 @@
+﻿@model IEnumerable<GuzellikSalonu.Models.HizmetlerModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+<p>
+    @Html.ActionLink("Create New", "EY",null, new { @class = "btn btn-success" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HizmetNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HizmetAdı)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HizmetAmacı)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tutar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OdemeTuru)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GorevliNo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HizmetNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HizmetAdı)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HizmetAmacı)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tutar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OdemeTuru)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GorevliNo)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "EY", new { id = item.HizmetNo }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Sil", "Sil", new { id = item.HizmetNo }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>
